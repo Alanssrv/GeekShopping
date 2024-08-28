@@ -1,4 +1,5 @@
-﻿using GeekShopping.Web.Services.IServices;
+﻿using GeekShopping.Web.Models;
+using GeekShopping.Web.Services.IServices;
 using GeekShopping.Web.Utils;
 
 namespace GeekShopping.Web.Services
@@ -7,7 +8,7 @@ namespace GeekShopping.Web.Services
     {
         private readonly HttpClient _client;
 
-        public const string BasePath = "product";
+        public const string BasePath = "api/product";
 
         public ProductService(HttpClient client)
         {
