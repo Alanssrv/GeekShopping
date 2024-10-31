@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GeekShopping.CartAPI.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/[controller]")]
     public class CartController : ControllerBase
     {
         private ICartRepository _repository;
@@ -25,7 +25,7 @@ namespace GeekShopping.CartAPI.Controllers
             return Ok(cart);
         }
 
-        [HttpPost("add-cart/{id}")]
+        [HttpPost("add-cart")]
         public async Task<ActionResult<CartVO>> AddCart(CartVO cartVO)
         {
             var cart = await _repository.SaveOrUpdateCart(cartVO);
@@ -34,7 +34,7 @@ namespace GeekShopping.CartAPI.Controllers
             return Ok(cart);
         }
 
-        [HttpPut("update-cart/{id}")]
+        [HttpPut("update-cart")]
         public async Task<ActionResult<CartVO>> UpdateCart(CartVO cartVO)
         {
             var cart = await _repository.SaveOrUpdateCart(cartVO);
