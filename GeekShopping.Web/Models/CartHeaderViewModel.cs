@@ -8,6 +8,6 @@
 
         public string CouponCode { get; set; }
 
-        public double PurchaseAmount { get; set; } = 0;
+        public decimal PurchaseAmount { get; set; } = 0;
     }
 }
