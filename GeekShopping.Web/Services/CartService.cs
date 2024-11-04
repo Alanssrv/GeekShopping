@@ -34,7 +34,6 @@ namespace GeekShopping.Web.Services
                 return await response.ReadContentAs<CartViewModel>();
             else
                 throw new Exception("Something went wrong when calling API");
-
         }
 
         public async Task<CartViewModel> UpdateCart(CartViewModel model, string token)

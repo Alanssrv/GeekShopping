@@ -11,11 +11,13 @@ namespace GeekShopping.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
+        private readonly ICartService _cartService;
 
-        public HomeController(ILogger<HomeController> logger, IProductService productService)
+        public HomeController(ILogger<HomeController> logger, IProductService productService, ICartService cartService)
         {
             _logger = logger;
             _productService = productService;
+            _cartService = cartService;
         }
 
         public async Task<IActionResult> Index()
@@ -31,6 +33,39 @@ namespace GeekShopping.Web.Controllers
             var product = await _productService.FindProductById(id, accessToken);
 
             return View(product);
+        }
+
+        [HttpPost]
+        [ActionName("Details")]
+        [Authorize]
+        public async Task<IActionResult> DetailsPost(ProductViewModel model)
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+            CartViewModel cart = new CartViewModel()
+            {
+                CartHeader = new CartHeaderViewModel()
+                {
+                    UserId = User.Claims.Where(user => user.Type == "sub")?.FirstOrDefault()?.Value,
+
+                },
+                CartDetails = new List<CartDetailViewModel>()
+                {
+                    new CartDetailViewModel()
+                    {
+                        Count = model.Count,
+                        ProductId = model.Id,
+                        Product = await _productService.FindProductById(model.Id, accessToken),
+                    }
+                }
+            };
+
+            var response = await _cartService.AddItemToCart(cart, accessToken);
+
+            if (response is not null)
+                return RedirectToAction(nameof(Index));
+
+            return View(model);
         }
 
         public IActionResult Privacy()

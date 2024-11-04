@@ -15,7 +15,7 @@ namespace GeekShopping.CartAPI.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     user_id = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    coupon_code = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    coupon_code = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
