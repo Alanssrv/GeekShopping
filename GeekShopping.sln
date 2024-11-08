@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{FC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Web", "GeekShopping.Web\GeekShopping.Web.csproj", "{33EB5C12-5368-4394-9D91-34C73C044479}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.CartAPI", "GeekShopping.CartAPI\GeekShopping.CartAPI.csproj", "{7946E439-73AE-47D6-9387-FCD8C5CCC7C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.CartAPI", "GeekShopping.CartAPI\GeekShopping.CartAPI.csproj", "{7946E439-73AE-47D6-9387-FCD8C5CCC7C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.CouponAPI", "GeekShopping.CouponAPI\GeekShopping.CouponAPI.csproj", "{37F05518-3D43-4F1A-8CBA-A1F80114B2D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{7946E439-73AE-47D6-9387-FCD8C5CCC7C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7946E439-73AE-47D6-9387-FCD8C5CCC7C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7946E439-73AE-47D6-9387-FCD8C5CCC7C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F05518-3D43-4F1A-8CBA-A1F80114B2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F05518-3D43-4F1A-8CBA-A1F80114B2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F05518-3D43-4F1A-8CBA-A1F80114B2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F05518-3D43-4F1A-8CBA-A1F80114B2D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{F5FDA054-04ED-4C43-A8A9-5D4ADF08D545} = {ACD4FA69-18A8-44D7-BB13-8E8DB6208AC4}
 		{33EB5C12-5368-4394-9D91-34C73C044479} = {FC9E4741-1458-42C1-AD72-483373D4B67A}
 		{7946E439-73AE-47D6-9387-FCD8C5CCC7C0} = {ACD4FA69-18A8-44D7-BB13-8E8DB6208AC4}
+		{37F05518-3D43-4F1A-8CBA-A1F80114B2D5} = {ACD4FA69-18A8-44D7-BB13-8E8DB6208AC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {950BBC51-949B-45E2-8A86-1C6379C43D05}
